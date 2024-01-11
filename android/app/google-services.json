@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "981701945841",
+    "project_id": "nimgame-4ab4e",
+    "storage_bucket": "nimgame-4ab4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981701945841:android:77a78a0e6f62c17b3e3c50",
+        "android_client_info": {
+          "package_name": "com.nimgame.l3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh9oIpwE_vx9Kt9TOv_0z7QKC-xEKWfZs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

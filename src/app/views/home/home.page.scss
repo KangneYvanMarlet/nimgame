@@ -1,0 +1,11 @@
+.btn-game {
+    margin-top: 7rem;
+    display: grid;
+    gap: 1rem;
+
+    ion-button {
+        text-transform: none;
+        --border-radius: 19px;
+        margin-inline: 10px;
+    }
+}

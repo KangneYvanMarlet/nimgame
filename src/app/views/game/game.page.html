@@ -1,0 +1,77 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="start" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Jeux</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="block" (click)="openModal()">Nouveau jeu</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-text>
+          <h5>{{ message }}</h5>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ng-container *ngFor="let objet of tabDisplay">
+          <ion-button class="baton" [ngClass]="objet % 2 === 0 ? 'bg-red':''">|</ion-button>
+        </ng-container>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <b *ngIf="displayNbSystem">{{nameGamer}} : {{nombreDuJoueurCourant}}</b>
+  <div class="bloc-btn">
+    <ion-buttons slot="start">
+      <ion-button [disabled]="joueur !== 'humain'" (click)="retirer(1)">1</ion-button>
+      <ion-button [disabled]="joueur !== 'humain'" (click)="retirer(2)">2</ion-button>
+      <ion-button [disabled]="joueur !== 'humain'" (click)="retirer(3)">3</ion-button>
+    </ion-buttons>
+  </div>
+</ion-content>
+
+
+<!-- ================================== modal title order =================================== -->
+
+<ion-modal id="modal-title" #modale isOpen="{{modalIsOpen}}" [enterAnimation]="enterAnimation"
+  [leaveAnimation]="leaveAnimation">
+  <ng-template>
+    <ion-header [translucent]="true" class="ion-no-border">
+      <ion-toolbar color="purple">
+        <ion-title>Nombre de bâtonnets</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div class="ion-margin-top ">
+        <div class="qty">
+          <ion-label>Nombre de batônets</ion-label>
+          <ion-buttons slot="start">
+            <ion-button shape="round" (click)="nbBatSubs()">
+              -
+            </ion-button>
+            <b> {{pile}}</b>
+            <ion-button shape="round" (click)="nbBatAdd()">
+              +
+            </ion-button>
+          </ion-buttons>
+        </div>
+        <div class="btn d-f-c">
+          <ion-button block class="ion-margin" (click)="nouveauJeu()">
+            Jouer
+          </ion-button>
+        </div>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "nimgame-4ab4e"
+  },
+  "targets": {
+    "nimgame-4ab4e": {
+      "hosting": {
+        "app": [
+          "nimgame-4ab4e"
+        ]
+      }
+    }
+  }
+}

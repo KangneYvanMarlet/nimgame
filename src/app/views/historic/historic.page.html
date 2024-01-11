@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Historique </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Profil de l'utilisateur</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><ion-label> Prenom: </ion-label><span> {{currentUser.prenom}}</span></p>
+      <p><ion-label> Matricule: </ion-label><span> {{currentUser.matricule}}</span></p>
+      <p><ion-label> Niveau: </ion-label><span> {{currentUser.niveau}}</span></p>
+      <p><ion-label> Nombre de partie de jeux: </ion-label><span> {{currentUser.nbGameParty}}</span></p>
+      <p><ion-label> Nombre de victoires: </ion-label><span> {{currentUser.nbGamePartyWin}}</span></p>
+      <p><ion-label> Nombre de defaites: </ion-label><span> {{currentUser.nbGamePartyLoss}}</span></p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
