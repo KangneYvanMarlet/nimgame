@@ -1,0 +1,63 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>NIM-GAME</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div class="container">
+    <div class="btn-game">
+      <ion-button (click)="goToGame(0)">
+        <ion-icon slot="icon-only" name="game-controller-outline"></ion-icon>Jouer contre L'application
+      </ion-button>
+      <ion-button (click)="goToGame(1)" color="success">
+        <ion-icon slot="icon-only" name ="person-outline"></ion-icon>Jouer contre un ami
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
+
+
+
+
+<!-- ================================== modal title order =================================== -->
+
+<ion-modal id="modal-title" #modale isOpen="{{modalIsOpen}}" [enterAnimation]="enterAnimation"
+  [leaveAnimation]="leaveAnimation">
+  <ng-template>
+    <ion-header [translucent]="true" class="ion-no-border">
+      <ion-toolbar color="purple">
+        <ion-buttons slot="start">
+          <ion-back-button defaultHref="tabs/home" (click)="closeModal()"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Configurations</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div class="ion-margin-top ">
+        <div class="qty">
+          <ion-input type="text" placeholder="Matricule de ton ami" [(ngModel)]="matricule"></ion-input>
+          <ion-label>Nombre de batônets</ion-label>
+          <ion-buttons slot="start">
+            <ion-button shape="round" (click)="nbBatSubs()">
+              -
+            </ion-button>
+            <b> {{pile}}</b>
+            <ion-button shape="round" (click)="nbBatAdd()">
+              +
+            </ion-button>
+          </ion-buttons>
+        </div>
+        <div class="btn d-f-c">
+          <ion-button block class="ion-margin" [disabled]="matricule.length < 8" (click)="nouveauJeu()">
+            Jouer
+          </ion-button>
+        </div>
+      </div>
+    </ion-content>
+  </ng-template>
+</ion-modal>
+

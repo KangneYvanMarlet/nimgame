@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="confirmGameAlertCtrl()">
+        <ion-icon slot="start" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Jeux</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <!-- <ion-button expand="block" (click)="closeModal()">Nouveau jeu</ion-button> -->
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-text>
+          <h5>{{ message }}</h5>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ng-container *ngFor="let objet of tabDisplay">
+          <ion-button class="baton" [ngClass]="objet % 2 === 0 ? 'bg-red':''">|</ion-button>
+        </ng-container>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <b *ngIf="displayNbSystem">{{nameGamer}} : {{nombreDuJoueurCourant}}</b>
+  <div class="bloc-btn">
+    <ion-buttons slot="start">
+      <ion-button [disabled]="joueur !== currentUser.prenom" (click)="retirer(1)">1</ion-button>
+      <ion-button [disabled]="joueur !== currentUser.prenom" (click)="retirer(2)">2</ion-button>
+      <ion-button [disabled]="joueur !== currentUser.prenom" (click)="retirer(3)">3</ion-button>
+    </ion-buttons>
+  </div>
+</ion-content>

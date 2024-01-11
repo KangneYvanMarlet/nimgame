@@ -1,0 +1,21 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="title">
+    <h4>Connexion</h4>
+    <p>C'est partie</p>
+  </div>
+
+  <ion-input placeholder="Matricule" class="primary-input" [(ngModel)]="matricule"></ion-input>
+  <ion-input placeholder="Password" type="password" class="primary-input" [(ngModel)]="password"></ion-input>
+
+  <div class="ion-margin-top">
+    <ion-button expand="block" (click)="login()" [disabled]="matricule.length < 8 || password.length < 8">se connecter</ion-button>
+  </div>
+
+  <div class="ion-margin-top ion-text-center">
+    <a (click)="dismiss()">Close</a>
+  </div>
+</ion-content>

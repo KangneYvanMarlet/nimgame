@@ -1,0 +1,24 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="title">
+    <h3>Inscription</h3>
+    <p>Inscrivez-vous à NimGame pour commencer a jouer</p>
+  </div>
+
+  <ion-input placeholder="Prenom" class="primary-input" [(ngModel)]="prenom"></ion-input>
+  <ion-input placeholder="Matricule" class="primary-input" [(ngModel)]="matricule"></ion-input>
+  <ion-input placeholder="Password" type="password" class="primary-input" [(ngModel)]="password"></ion-input>
+
+  <p class="ini">En vous inscrivant, vous acceptez nos conditions générales</p>
+
+  <div class="ion-margin-top">
+    <ion-button expand="block" (click)="register()" [disabled]="matricule.length < 8 || password.length < 8">S'enregistrer</ion-button>
+  </div>
+
+  <div class="ion-margin-top ion-text-center">
+    <a (click)="dismiss()">Close</a>
+  </div>
+</ion-content>
